@@ -41,7 +41,7 @@ arch() {
 echo ""
 echo -e "${yellow}---------->>>>>当前系统的架构为: $(arch)${plain}"
 echo ""
-last_version=$(curl -Ls "https://api.github.com/repos/sesshen/3xui241/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+last_version=$(curl -Ls "https://any.188174.xyz/pwd=xichen/https://api.github.com/repos/sesshen/3xui241/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 # 获取 x-ui 版本
 xui_version=$(/usr/local/x-ui/x-ui -v)
 
@@ -214,7 +214,7 @@ install_x-ui() {
     cd /usr/local/
 
     if [ $# == 0 ]; then
-        last_version=$(curl -Ls "https://api.github.com/repos/sesshen/3xui241/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+        last_version=$(curl -Ls "https://any.188174.xyz/pwd=xichen/https://api.github.com/repos/sesshen/3xui241/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
         if [[ ! -n "$last_version" ]]; then
             echo -e "${red}获取 3x-ui 版本失败，可能是 Github API 限制，请稍后再试${plain}"
             exit 1
@@ -231,14 +231,14 @@ install_x-ui() {
         echo -e "${green}---------------->>>>>>>>>>>>>>>>>>>>>安装进度100%${plain}"
         echo ""
         sleep 2
-        wget -N --no-check-certificate -O /usr/local/x-ui-linux-$(arch).tar.gz https://github.com/sesshen/3xui241/releases/download/${last_version}/x-ui-linux-$(arch).tar.gz
+        wget -N --no-check-certificate -O /usr/local/x-ui-linux-$(arch).tar.gz https://any.188174.xyz/pwd=xichen/https://github.com/sesshen/3xui241/releases/download/${last_version}/x-ui-linux-$(arch).tar.gz
         if [[ $? -ne 0 ]]; then
             echo -e "${red}下载 3x-ui 失败, 请检查服务器是否可以连接至 GitHub？ ${plain}"
             exit 1
         fi
     else
         last_version=$1
-        url="https://github.com/sesshen/3xui241/releases/download/${last_version}/x-ui-linux-$(arch).tar.gz"
+        url="https://any.188174.xyz/pwd=xichen/https://github.com/sesshen/3xui241/releases/download/${last_version}/x-ui-linux-$(arch).tar.gz"
         echo ""
         echo -e "--------------------------------------------"
         echo -e "${green}---------------->>>>开始安装 3x-ui $1${plain}"
@@ -279,7 +279,7 @@ install_x-ui() {
 
     chmod +x x-ui bin/xray-linux-$(arch)
     cp -f x-ui.service /etc/systemd/system/
-    wget --no-check-certificate -O /usr/bin/x-ui https://raw.githubusercontent.com/sesshen/3xui241/main/x-ui.sh
+    wget --no-check-certificate -O /usr/bin/x-ui https://any.188174.xyz/pwd=xichen/https://raw.githubusercontent.com/sesshen/3xui241/main/x-ui.sh
     chmod +x /usr/local/x-ui/x-ui.sh
     chmod +x /usr/bin/x-ui
     sleep 2
